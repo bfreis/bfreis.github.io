@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="{{ default "en-US" .Site.LanguageCode }}">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="author" content="Bruno Reis"/>
-  <title>bfre.is</title>
-  <meta name="generator" content="Hugo 0.76.5" />
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  {{ hugo.Generator }}
 </head>
 <body>
+{{- block "main" . }}
   <h3>
     <a href="/cv">Resume (Online)</a>
   </h3>
   <h3>
     <a href="/cv/cv-bfreis-2020-05-1p.pdf">Resume (PDF)</a>
   </h3>
+{{- end -}}
+{{- block "footer" . -}}
+{{- end }}
 </body>
 </html>
