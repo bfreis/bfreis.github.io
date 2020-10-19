@@ -1,0 +1,13 @@
+baseURL: "https://bfre.is/"
+languageCode: "en-us"
+title: "bfre.is"
+
+publishdir: ../docs
+
+# "page", "home", "section", "taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"
+disableKinds:
+  - RSS
+  - sitemap
+  - term
+  - taxonomy
+  - home
