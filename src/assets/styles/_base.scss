@@ -1,0 +1,19 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  line-height: 1rem;
+}
+
+html {
+  font: 24px / 1 'Roboto', sans-serif;
+}
+
+h3 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
