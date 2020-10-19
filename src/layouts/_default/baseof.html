@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="author" content="Bruno Reis"/>
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-  {{ hugo.Generator }}
+    {{ hugo.Generator }}
+    {{- $style := resources.Get "styles/styles.scss" | resources.ExecuteAsTemplate "styles/styles.scss" . | resources.ToCSS -}}
+    {{- if eq hugo.Environment "production" }}
+        {{- $style = $style | resources.Minify | resources.Fingerprint -}}
+    {{- end }}
+  <link rel="stylesheet" href="{{ $style.Permalink | relURL }}"/>
 </head>
 <body>
 {{- block "main" . }}
